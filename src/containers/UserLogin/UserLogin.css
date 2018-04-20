@@ -15,7 +15,7 @@ input[type=text]:focus {
     border: 3px solid #555;
 }
 
-input[type=submit] {
+.Submit {
     width: 25%;
     background-color: rgb(44, 66, 90);
     color: white;
@@ -27,11 +27,11 @@ input[type=submit] {
     font-size   : 100%;
 }
 
-input[type=submit]:hover {
+.Submit:hover {
     background-color: #22535c;
 }
 
-.App {
+.User {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
