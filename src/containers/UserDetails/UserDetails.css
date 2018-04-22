@@ -1,0 +1,28 @@
+/* .Name {
+    width: 50%;
+    height: 50px;
+    margin: 20px auto;
+    border: 1px solid #eee;
+    text-align: center;
+    box-shadow: 5px 10px #888888;
+} */
+
+
+.desc-block-left1 {
+    display:inline-block;
+    border-style:solid;
+    background-color:#ffffff;
+    width:40%;
+    height:110px;
+    margin:30px 10px 10px 5%;
+    border-radius:10px;
+}
+ .desc-block-right1 {
+    display:inline-block;
+    border-style:solid;
+    background-color:#ffffff;
+    width:40%;
+    height:110px;
+    margin:30px 10px 10px 5%;
+    border-radius:10px;
+}

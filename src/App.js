@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-import UserLogin from './containers/UserLogin/UserLogin';
+import UserLogin from './containers/UserLogin';
+import UserDetails from './containers/UserDetails';
 import axios from 'axios';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <UserLogin />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={UserLogin} />
+          <Route path="/details" exact component={UserDetails} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
