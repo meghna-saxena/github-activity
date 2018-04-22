@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter,  Redirect, Route } from 'react-router-dom'; 
+import { Redirect, Route } from 'react-router-dom'; 
 import axios from 'axios';
 import './UserLogin.css';
 import UserDetails from '../UserDetails';
@@ -20,6 +20,7 @@ class UserLogin extends Component {
 
         axios.get(`https://api.github.com/users/${name.value}`)
             .then(response => {
+                debugger;
                 console.log(response.data);
                 const name = response.data.name;
                 const bio = response.data.bio;
@@ -35,9 +36,9 @@ class UserLogin extends Component {
     }
 
     render() {
-        console.log(this.state.detailsFetched);
         if(this.state.detailsFetched) {
-            return <Redirect to="/details" />
+            const url = "details/" + this.state.userName;
+            return <Redirect to={url} />
         }
         return (
             <div>

@@ -8,10 +8,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
+        {/* <Switch>
           <Route path="/" exact component={UserLogin} />
-          <Route path="/details" exact component={UserDetails} />
-        </Switch>
+          <Route path="/details/:name" component={UserDetails}/>}/>
+        </Switch> */}
+        <UserLogin />
       </BrowserRouter>
     );
   }
