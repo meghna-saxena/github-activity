@@ -1,45 +1,24 @@
 import React, { Component } from 'react';
-import { Redirect, Route } from 'react-router-dom'; 
-import axios from 'axios';
+import { Redirect, Route } from 'react-router-dom';
 import './UserLogin.css';
 import UserDetails from '../UserDetails';
 
-
 class UserLogin extends Component {
     state = {
-        userName: "",
-        bio: "",
-        location: "",
+        userName: null,
         detailsFetched: null
     }
 
     onSubmitHandler = (event) => {
-        const name = this.refs.username;
-        
-        this.setState({ userName: name.value });
-
-        axios.get(`https://api.github.com/users/${name.value}`)
-            .then(response => {
-                debugger;
-                console.log(response.data);
-                const name = response.data.name;
-                const bio = response.data.bio;
-                const location = response.data.location;
-                this.setState({
-                    userName: name,
-                    bio: bio,
-                    location: location,
-                    detailsFetched: true
-                })
-                // this.props.history.push('/details');  // <- method 1, if using withRouter; https://tylermcginnis.com/react-router-programmatically-navigate/
-            });
+        this.setState({ userName: this.refs.username.value, detailsFetched: true });
     }
 
     render() {
-        if(this.state.detailsFetched) {
-            const url = "details/" + this.state.userName;
+        if (this.state.detailsFetched) {
+            const url = "details/" + this.refs.username.value;
             return <Redirect to={url} />
         }
+
         return (
             <div>
                 <div className="w3-container w3-orange" style={{ textAlign: "center" }}>
@@ -55,5 +34,4 @@ class UserLogin extends Component {
     }
 }
 
-// export default withRouter(UserLogin);
 export default UserLogin;
