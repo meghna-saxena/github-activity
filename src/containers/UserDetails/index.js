@@ -17,7 +17,7 @@ class UserDetails extends Component {
                 const location = response.data.location;
                 this.setState({
                     // bio: { name, bio, location }
-                    personalDetails: {name, bio, location}
+                    personalDetails: { name, bio, location }
                 })
             });
 
@@ -37,12 +37,54 @@ class UserDetails extends Component {
         }
 
         return (
-            <div>
-                {this.state.personalDetails.name}
-                {this.state.personalDetails.bio}
-                {this.state.personalDetails.location}
+            <div class="main">
+                <div class="column">
+                <div className="name">
+                        {this.state.personalDetails.name}
+                    </div>
+                    <br />
+                    <div className="others">
+                        {this.state.personalDetails.bio}
+                        <br />
+                        {this.state.personalDetails.location}
+                    </div>
+                </div>
+                <div class="column repo">
+                <ul>
                 {repositories}
+                </ul>
+                </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            // <div className="main">
+            //     <div class="col span-1-of-2 personal-details">
+            //         {/* <div className="personal-details"> */}
+            //         <div className="name">
+            //             {this.state.personalDetails.name}
+            //         </div>
+            //         <br />
+            //         <div className="others">
+            //             {this.state.personalDetails.bio}
+            //             <br />
+            //             {this.state.personalDetails.location}
+            //         </div>
+            //         {/* </div> */}
+            //     </div>
+            //     <div class="col span-1-of-2 repo">
+            //         {repositories}
+            //     </div>
+            // </div>
         );
     }
 }

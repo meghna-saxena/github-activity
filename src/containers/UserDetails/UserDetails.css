@@ -8,21 +8,76 @@
 } */
 
 
-.desc-block-left1 {
-    display:inline-block;
-    border-style:solid;
-    background-color:#ffffff;
-    width:40%;
-    height:110px;
-    margin:30px 10px 10px 5%;
-    border-radius:10px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
- .desc-block-right1 {
-    display:inline-block;
-    border-style:solid;
-    background-color:#ffffff;
-    width:40%;
-    height:110px;
-    margin:30px 10px 10px 5%;
-    border-radius:10px;
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7) ), url(../../assets/img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.personal-details,
+.name,
+.others {   
+    /* text-transform: uppercase; */
+    font-weight: 100;
+    margin: 0 80px;
+    /* padding-top: 65px; */
+    color:#ecf0f1; 
+}
+
+.name {
+   font-size: 70px; 
+   padding-top: 155px;
+}
+
+.others {
+    font-size: 25px;
+
+
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.main:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column ul {
+    background-color: #e1ebf5;
+    /* margin: 30%; */
+    padding: 65px;
+    font-size: 30px;
+    list-style-type: none;
+}
+
+.repo {
+    background-color:#d5e2f1;
+}
+
+li {
+    display: block;
+    padding: 5px;
+    border-bottom: 2px solid #7ba6d4;
+    word-spacing: 4px;
+    letter-spacing: 1px;  
 }
