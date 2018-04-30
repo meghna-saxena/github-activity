@@ -27,19 +27,23 @@ class UserDetails extends Component {
             });
     }
 
+    // showCommits = () => {
+    //     axios.get(`https://api.github.com/users/${user}/repos/${repo.name}/commits`)
+    // }
+
     render() {
         console.log("In render", this.state);
         let repositories = undefined;
         if (this.state.repos) {
             repositories = this.state.repos.map(repo =>
-                <li>{repo.name}</li>
+                <li onClick={this.showCommits}>{repo.name}</li>
             );
         }
 
         return (
             <div class="main">
                 <div class="column">
-                <div className="name">
+                    <div className="name">
                         {this.state.personalDetails.name}
                     </div>
                     <br />
@@ -50,9 +54,9 @@ class UserDetails extends Component {
                     </div>
                 </div>
                 <div class="column repo">
-                <ul>
-                {repositories}
-                </ul>
+                    <ul>
+                        {repositories}
+                    </ul>
                 </div>
             </div>
 
