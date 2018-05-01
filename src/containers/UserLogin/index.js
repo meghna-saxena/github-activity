@@ -21,15 +21,13 @@ class UserLogin extends Component {
 
         return (
             <div>
-                <div className="row">
-                    <div className="heading">
-                        <h2><strong>Check Your Github</strong></h2>
-                    </div>
-                    <div className="UserLogin">
-                        <label>User Name</label><br />
-                        <input type="text" className="UserName" placeholder="Your name.." ref="username" /><br />
-                        <button className="Submit" onClick={this.onSubmitHandler}>Submit</button>
-                    </div>
+                <div className="w3-container w3-orange" style={{ textAlign: "center" }}>
+                    <h2><strong>See Your Github!</strong></h2>
+                </div>
+                <div className="UserLogin">
+                    <label>User Name</label><br />
+                    <input type="text" className="UserName" placeholder="Your name.." ref="username" /><br />
+                    <button className="Submit" onClick={this.onSubmitHandler}>Submit</button>
                 </div>
             </div>
         );
