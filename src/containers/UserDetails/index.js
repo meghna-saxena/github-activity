@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './UserDetails.css';
 import axios from 'axios';
+import UserCommits from '../../components/UserCommits';
 
 class UserDetails extends Component {
     state = {
@@ -27,19 +28,33 @@ class UserDetails extends Component {
             });
     }
 
+    showCommits = (repoName) => {
+        const url = `https://api.github.com/repos/${this.props.match.params.name}/${repoName}/commits`;
+        console.log(url)
+        axios.get(url)
+            .then(response => {
+                console.log(response.data);
+                // this.setState({commits: response.commit.message})
+            });
+    }
+
     render() {
         console.log("In render", this.state);
         let repositories = undefined;
         if (this.state.repos) {
-            repositories = this.state.repos.map(repo =>
-                <li>{repo.name}</li>
-            );
-        }
+            repositories = this.state.repos.map(repo => (
+                <UserCommits
+                 key={repo.name} 
+                 name={repo.name}
+                 clicked={() => this.showCommits(repo.name)} />
+            )
+        );
+    }
 
         return (
-            <div class="main">
-                <div class="column">
-                <div className="name">
+            <div className="main">
+                <div className="column">
+                    <div className="name">
                         {this.state.personalDetails.name}
                     </div>
                     <br />
@@ -49,42 +64,12 @@ class UserDetails extends Component {
                         {this.state.personalDetails.location}
                     </div>
                 </div>
-                <div class="column repo">
-                <ul>
-                {repositories}
-                </ul>
+                <div className="column repo">
+                    <ul>
+                        {repositories}
+                    </ul>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            // <div className="main">
-            //     <div class="col span-1-of-2 personal-details">
-            //         {/* <div className="personal-details"> */}
-            //         <div className="name">
-            //             {this.state.personalDetails.name}
-            //         </div>
-            //         <br />
-            //         <div className="others">
-            //             {this.state.personalDetails.bio}
-            //             <br />
-            //             {this.state.personalDetails.location}
-            //         </div>
-            //         {/* </div> */}
-            //     </div>
-            //     <div class="col span-1-of-2 repo">
-            //         {repositories}
-            //     </div>
-            // </div>
         );
     }
 }
