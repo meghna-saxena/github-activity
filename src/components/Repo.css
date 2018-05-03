@@ -1,0 +1,31 @@
+.user-repos {
+    display: block;
+    padding: 1px;
+    border-bottom: 2px solid #334245;
+    word-spacing: 4px;
+    letter-spacing: 1px;  
+    text-transform: capitalize;
+    /* transition: width 2s; */
+} 
+
+/* #show,
+#user-commits {
+    display:none;
+} */
+
+#show,#content{display:none;}
+#show:checked~#content{display:block;}
+/* #show:checked,
+#content{
+    display:block;
+} */
+
+
+#content {
+    margin: 0 auto;
+    background-color: #b1c2c6;
+    color: #000;
+    font-size: 18px;
+    list-style-type: circle;
+   
+}

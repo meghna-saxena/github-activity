@@ -12,8 +12,8 @@
 .main {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7) ), url(../../assets/img/bg.jpg);
     background-size: cover;
-    background-position: center;
     height: 100vh;
+    background-attachment: fixed;
 }
 
 .personal-details,
@@ -53,7 +53,7 @@
 }
 
 .column ul {
-    background-color: #e1ebf5;
+    background-color: #e2e8ea;
     /* margin: 30%; */
     padding: 65px;
     font-size: 30px;
@@ -61,14 +61,14 @@
 }
 
 .repo {
-    background-color:#d5e2f1;
+    background-color:#e2e8ea;
 }
 
-.user-commits {
+/* .user-commits {
     display: block;
     padding: 1px;
     border-bottom: 2px solid #7ba6d4;
     word-spacing: 4px;
     letter-spacing: 1px;  
     text-transform: capitalize;
-}
+} */

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './UserDetails.css';
 import axios from 'axios';
-import UserCommits from '../../components/UserCommits';
+import Repo from '../../components/Repo';
 
 class UserDetails extends Component {
     state = {
@@ -43,13 +43,14 @@ class UserDetails extends Component {
         let repositories = undefined;
         if (this.state.repos) {
             repositories = this.state.repos.map(repo => (
-                <UserCommits
-                 key={repo.name} 
-                 name={repo.name}
-                 clicked={() => this.showCommits(repo.name)} />
+                <Repo
+                    key={repo.name}
+                    name={repo.name}
+                    commitUrl={`https://api.github.com/repos/${this.props.match.params.name}/${repo.name}/commits`}
+                />
             )
-        );
-    }
+            );
+        }
 
         return (
             <div className="main">
